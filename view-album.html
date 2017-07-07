@@ -1,0 +1,9 @@
+<div class="container">
+	<div class="list-group">
+		<ul class="list-group-item" ng-repeat="album in albums">
+			<li>{{album.id}}</li>
+			<li>{{album.title}}</li>
+			<li class="text-success" ui-sref="viewphotos({albumId: album.id})">View Photos</li>
+		</ul>
+	</div>
+</div>

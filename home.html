@@ -1,0 +1,60 @@
+<header>
+	<h1 class="text-center">Users Detail using Typicode API</h1>
+	<h3 class="text-center">http://jsonplaceholder.typicode.com/users</h3>
+</header>
+	
+<div class="container" ng-controller="userController as userlist">
+
+	<div class="row" style="margin-top: 15px; margin-bottom: 15px;">
+		<div class="col-lg-10">
+			<div class="input-group">	
+				<input type="text" class="form-control" placeholder="Filter by Name" ng-model="filterbyname">
+				<span class="input-group-btn">
+					<button class="btn btn-primary" type="button">Filter</button>
+				</span>
+			</div>
+		</div>
+	</div>
+
+	<div class="panel panel-default">
+	  <!-- Default panel contents -->
+	  <div class="panel-heading">Users List
+	  	<a style="float: right; margin-top: -8px;" class="btn btn-primary" ui-sref="newusers">Create Users</a>
+	  </div>
+	  <!-- Table -->
+	  <table class="table">
+	    <thead>
+		    <tr class="success">
+		    	<td>iD</td>
+		    	<td>Name</td>
+		    	<td>Username</td>
+		    	<td>Email</td>
+		    	<td>Street</td>
+		    	<td>Suite</td>
+		    	<td>City</td>
+		    	<td>Phone</td>
+		    	<td>Website</td>
+		    	<td>Company Name</td>
+		    	<td>Posts</td>
+		    	<td>Album</td>
+		    </tr>
+	    </thead>
+	    <tbody ng-repeat="user in userlist.users | filter: filterbyname | orderBy: 'user.name'">
+	    	<tr>
+		    	<td>{{user.id}}</td>
+		    	<td>{{user.name}}</td>
+		    	<td>{{user.username}}</td>
+		    	<td>{{user.email}}</td>
+	    		<td>{{user.address.street}}</td>
+	    		<td>{{user.address.suite}}</td>
+	    		<td>{{user.address.city}}</td>
+		    	<td>{{user.phone}}</td>
+		    	<td>{{user.website}}</td>
+		    	<td>{{user.company.name}}</td>
+		    	<td class="text-info" ui-sref="viewposts({userId: user.id})">View Posts</td>
+		    	<td class="text-info" ui-sref="viewuseralbum({userId: user.id})">View Album</td>
+		    </tr>
+	    </tbody>
+	  </table>
+	</div>
+</div>

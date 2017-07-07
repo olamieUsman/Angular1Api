@@ -1,0 +1,13 @@
+<div class="container">
+	<div class="list-group" ng-repeat="post in posts">
+  		<a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+	    
+	    <div class="d-flex w-100 justify-content-between">
+	      <h5 class="mb-1"><strong>{{post.title}}</strong></h5>
+	      <h5 class="pull-right text-info" ui-sref="viewpostcomment({postId: post.id})">View Comments</h5>
+	    </div>
+
+    		<p class="mb-1">{{post.body}}</p>
+ 		</a>
+	</div>
+</div>

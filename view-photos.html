@@ -1,0 +1,9 @@
+<div class="container">
+	<div class="row" ng-repeat="photo in photos">
+		<div class="img-wrap">
+			<h3><strong>{{photo.title}}</strong></h3>
+			<img class="rounded float-left" ng-src="{{photo.thumbnailUrl}}">
+			<img class="img-fluid float-right" ng-src="{{photo.url}}">
+		</div>
+	</div>
+</div>
